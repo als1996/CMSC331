@@ -67,6 +67,13 @@ session_start();
       </div>
 
         <div class="field">
+            <label for="Location">Location of meeting</label> <!-- check boxes for repeat weekdays -->
+            <input type="radio" name="location[]" value="My Office">My Office
+            <input type="radio" name="location[]" value="Other">Other:<input type="text" name="Location">	
+	</div>
+
+
+        <div class="field">
             <label for="Repeat">Repeat Weekly</label> <!-- check boxes for repeat weekdays -->
             <input type="checkbox" name="repeat[]" value="Monday">Monday
             <input type="checkbox" name="repeat[]" value="Tuesday">Tuesday
