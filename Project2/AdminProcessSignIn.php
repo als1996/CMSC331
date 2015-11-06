@@ -34,12 +34,12 @@ $rs = $Common->executeQuery($sql, "Advising Appointments");
 $row = mysql_fetch_row($rs);
 
 if($row){ // checks if admin is registered admin
-	if($debug) { echo("<br>".var_dump($_SESSION)."<- Session variables above<br>"); }
-	else { header('Location: AdminUI.php'); }
+    if($debug) { echo("<br>".var_dump($_SESSION)."<- Session variables above<br>"); }
+    else { header('Location: AdminUI.php'); }
 }
 else{ // if not then returns to sign in page
-	$_SESSION["UserVal"] = true;
-	header('Location: AdminSignIn.php'); 
+    $_SESSION["UserVal"] = true;
+    header('Location: AdminSignIn.php');
 }
 
 ?>

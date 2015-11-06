@@ -13,15 +13,15 @@ session_start();
       alert("Value: " + stepVal);
     }
     </script>
-	<!-- include css file -->
-	<link rel='stylesheet' type='text/css' href='css/standard.css'/>
-  </head> 
+    <!-- include css file -->
+    <link rel='stylesheet' type='text/css' href='css/standard.css'/>
+  </head>
   <body>
     <div id="login">
       <div id="form">
         <div class="top">
           <h1>Edit Group Appointment</h1>
-		  <div class="field">
+          <div class="field">
           <?php
             $debug = false;
             include('../CommonMethods.php');
@@ -29,24 +29,24 @@ session_start();
 
             $group = $_SESSION["GroupApp"];
             parse_str($group);
-		//Edit function posts edits made to AdminConfirmEditGroup.php
+        //Edit function posts edits made to AdminConfirmEditGroup.php
             echo("<form action=\"AdminConfirmEditGroup.php\" method=\"post\" name=\"Edit\">");
             echo("Time: ". date('l, F d, Y g:i A', strtotime($row[0])). "<br>");
             echo("Majors included: ");
             if($row[1]){
-              echo("$row[1]<br>"); 
+              echo("$row[1]<br>");
             }
             else{
-              echo("Available to all majors<br>"); 
+              echo("Available to all majors<br>");
             }
-	//outputs information regarding the current group appointment
+    //outputs information regarding the current group appointment
             echo("Number of students enrolled: $row[2] <br>");
             echo("Student limit: ");
             echo("<input type=\"number\" id=\"stepper\" name=\"stepper\" min=\"$row[2]\" max=\"$row[3]\" value=\"$row[3]\" />");
 
             echo("<br><br>");
 
-	//submit button that causes action to occur
+    //submit button that causes action to occur
             echo("<div class=\"nextButton\">");
             echo("<input type=\"submit\" name=\"next\" class=\"button large go\" value=\"Submit\">");
             echo("</div>");
@@ -58,10 +58,10 @@ session_start();
             }
             echo("</div>");
           ?>
-		  </div>
+          </div>
   </div>
   </div>
   </form>
   </body>
-  
+
 </html>

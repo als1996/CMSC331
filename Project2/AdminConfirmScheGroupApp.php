@@ -8,14 +8,14 @@ $COMMON = new Common($debug);
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<!-- includes css file -->
-	<link rel='stylesheet' type='text/css' href='css/standard.css'/>
+    <!-- includes css file -->
+    <link rel='stylesheet' type='text/css' href='css/standard.css'/>
   </head>
   <body>
     <div id="login">
       <div id="form">
         <div class="top">
-          <h2>Appointments Created</h2><br>
+          <h1>Appointments Created</h1><br>
           <?php
             $date = $_POST["Date"];
             $times = $_POST["time"];
@@ -23,7 +23,7 @@ $COMMON = new Common($debug);
             $repeatDays = $_POST["repeat"];
             $repeatWeek = $_POST["stepper"];
             $studentLimit = $_POST["stepper1"];
-          
+
           //one week with given start date (Ex. Thur - Wed) ['Thursday']=>[########]
           $d0 = $date;
           $d1 = '+1 day ' . $date;
@@ -38,8 +38,8 @@ $COMMON = new Common($debug);
                   date('l', strtotime($d3)) => strtotime($d3),
                   date('l', strtotime($d4)) => strtotime($d4),
                   date('l', strtotime($d5)) => strtotime($d5),
-                  date('l', strtotime($d6)) => strtotime($d6)); 
-          
+                  date('l', strtotime($d6)) => strtotime($d6));
+
           //initialize the first wk
           $dates = array();
           array_push($dates, date('Y-m-d',strtotime($date)));
@@ -59,7 +59,7 @@ $COMMON = new Common($debug);
               array_push($dates, $newDate);
             }
           }
-          
+
           //pair dates and times to make datetime things YYYY-MM-DD hh:mm:ss
           $datetimes = array();
           foreach($dates as $aDate){
@@ -68,27 +68,27 @@ $COMMON = new Common($debug);
               array_push($datetimes, $newDatetime);
             }
           }
-          
+
           //major stuff
           $majorDB = "";
           $majorPrint = "All";
           if(!empty($majors)){
             $majorPrint = "";
             foreach($majors as $m){
-	      if($m == 'CMPE')
-		      {$m = "Computer Engineering";}
-	      elseif($m == 'CMSC')
-		      {$m = "Computer Science";}
-	      elseif($m == 'MENG')
-		      {$m = "Mechanical Engineering";}
-	      elseif($m == 'CENG')
-		      {$m = "Chemical Engineering";}
+          if($m == 'CMPE')
+              {$m = "Computer Engineering";}
+          elseif($m == 'CMSC')
+              {$m = "Computer Science";}
+          elseif($m == 'MENG')
+              {$m = "Mechanical Engineering";}
+          elseif($m == 'CENG')
+              {$m = "Chemical Engineering";}
               $majorDB .= $m . " ";
               $majorPrint .= $m . ", ";
             }
             $majorPrint = substr($majorPrint, 0, -2);
           }
-          
+
           //get advisor id
           $User = $_SESSION["UserN"];
           $Pass = $_SESSION["PassW"];
@@ -96,7 +96,7 @@ $COMMON = new Common($debug);
           $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
           $row = mysql_fetch_row($rs);
           $id = $row[0];
-          
+
           //make sure app doesn't exist
           //insert new app to DB
           //print app
@@ -117,7 +117,7 @@ $COMMON = new Common($debug);
           }
         ?>
         <br>
-	<!-- returns user to homepage -->
+    <!-- returns user to homepage -->
         <form method="link" action="AdminUI.php">
           <input type="submit" name="next" class="button large go" value="Return to Home">
         </form>
@@ -125,8 +125,8 @@ $COMMON = new Common($debug);
       <div class="bottom">
         <p><span style="color:red">!!</span> indicates that this appointment already exists. A repeat appointment was not made.</p>
       </div>
-	</div>
-	</form>
+    </div>
+    </form>
   </body>
-  
+
 </html>

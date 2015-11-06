@@ -9,42 +9,42 @@ session_start();
     <title>Print Schedule</title>
     <script type="text/javascript">
     function saveValue(target){
-	var stepVal = document.getElementById(target).value;
-	alert("Value: " + stepVal);
+    var stepVal = document.getElementById(target).value;
+    alert("Value: " + stepVal);
     }
     </script>
-	<!-- include css file -->
-	<link rel='stylesheet' type='text/css' href='css/standard.css'/>
+    <!-- include css file -->
+    <link rel='stylesheet' type='text/css' href='css/standard.css'/>
   </head>
   <body>
     <div id="login">
       <div id="form">
         <div class="top">
-		      <h1>Print Schedule</h1>
-	<!-- Confirm function posts specified schedule to AdminPrintResults.php to be printed -->
+              <h1>Print Schedule</h1>
+    <!-- Confirm function posts specified schedule to AdminPrintResults.php to be printed -->
           <form action="AdminPrintResults.php" method="post" name="Confirm">
-	         <div class="field">
-	     	     <label for="date">Date</label>
+             <div class="field">
+                 <label for="date">Date</label>
              <input id="date" type="date" name="date" placeholder="mm/dd/yyyy" required autofocus> (mm/dd/yyyy)
-	         </div>
+             </div>
 
-	         <div class="field">
-        		<label for="Type">Type of Appointment</label>
+             <div class="field">
+                <label for="Type">Type of Appointment</label>
             <select id="type" name = "type">
-					<option>Both</option>
-        			<option>Individual</option>
-        			<option>Group</option>
-        		</select>
-	         </div>
+                    <option>Both</option>
+                    <option>Individual</option>
+                    <option>Group</option>
+                </select>
+             </div>
 
-	         <br>
-	<!-- continues to AdminPrintResults.php -->
-    	    <div class="nextButton">
-    			<input type="submit" name="next" class="button large go" value="Next">
+             <br>
+    <!-- continues to AdminPrintResults.php -->
+            <div class="nextButton">
+                <input type="submit" name="next" class="button large go" value="Next">
         </form>
-	</div>
-	</div>
-	<?php include('./workOrder/workButton.php'); ?>
+    </div>
+    </div>
+    <?php include('./workOrder/workButton.php'); ?>
 
   </body>
 </html>

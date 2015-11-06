@@ -5,20 +5,20 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<!-- includes css file -->
-	<link rel='stylesheet' type='text/css' href='css/standard.css'/>
+    <!-- includes css file -->
+    <link rel='stylesheet' type='text/css' href='css/standard.css'/>
   </head>
   <body>
     <div id="login">
       <div id="form">
         <div class="top">
-		<h1>Schedule Group Appointments</h1>
+        <h1>Schedule Group Appointments</h1>
 <b><font color="red" size="3">Please note only <u>one</u> staff member needs to schedule the GROUP session since it involves all of you. Please identify which advisor will enter this type meeting before continuing.</font></b>
 
-	<!-- confirm function posts the details of the group appointment to AdminConfirmScheGroup.php -->
+    <!-- confirm function posts the details of the group appointment to AdminConfirmScheGroup.php -->
         <form action="AdminConfirmScheGroupApp.php" method="post" name="Confirm">
-	    <div class="field">
-	      <label for="Date">Date</label>
+        <div class="field">
+          <label for="Date">Date</label>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
@@ -28,8 +28,8 @@ session_start();
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-	      <input id="Date" type="date" name="Date" placeholder="mm/dd/yyyy" min="2015-08-01" max="2015-12-30" required autofocus> (mm/dd/yyyy)
-	    </div>
+          <input id="Date" type="date" name="Date" placeholder="mm/dd/yyyy" min="2015-08-01" max="2015-12-30" required autofocus> (mm/dd/yyyy)
+        </div>
 
       <div class="field"> <!-- checkboxes for time -->
         <label for="Time">Times</label>
@@ -70,26 +70,26 @@ session_start();
         </div>
 
         <div class="field"> <!--sets number of repeat weeks-->
-        	<h3>Repeat for
-        	<input type="number" id="stepper" name="stepper" min="0" max="4" value="0" />
-		more week(s)</h3>
+            <h3>Repeat for
+            <input type="number" id="stepper" name="stepper" min="0" max="4" value="0" />
+        more week(s)</h3>
         </div>
 
-	<div class="field"> <!-- sets student limit -->
-        	<h3>Student limit:
-        	<input type="number" id="stepper1" name="stepper1" min="1" max="10" value="10" /></h3>
+    <div class="field"> <!-- sets student limit -->
+            <h3>Student limit:
+            <input type="number" id="stepper1" name="stepper1" min="1" max="10" value="10" /></h3>
         </div>
 
-	<div class="nextButton">
-		<input type="submit" name="next" class="button large go" value="Create">
-	</div>
-	</div>
-	</form>
-	<!--home function returns user to homepage -->
-		<form method="link" action="AdminUI.php" name="home">
-			<input type="submit" name="next" class="button large" value="Cancel">
-		</form>
-	<?php include('./workOrder/workButton.php'); ?>
+    <div class="nextButton">
+        <input type="submit" name="next" class="button large go" value="Create">
+    </div>
+    </div>
+    </form>
+    <!--home function returns user to homepage -->
+        <form method="link" action="AdminUI.php" name="home">
+            <input type="submit" name="next" class="button large" value="Cancel">
+        </form>
+    <?php include('./workOrder/workButton.php'); ?>
 
 
   </body>

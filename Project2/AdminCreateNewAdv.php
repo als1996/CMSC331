@@ -7,8 +7,8 @@ session_start();
   <head>
     <meta charset="UTF-8" />
     <title>Create New Admin</title>
-	<!-- includes css file -->
-	<link rel='stylesheet' type='text/css' href='css/standard.css'/>
+    <!-- includes css file -->
+    <link rel='stylesheet' type='text/css' href='css/standard.css'/>
 
      <script type="text/javascript">
     //   window.onload = function () {
@@ -21,7 +21,7 @@ session_start();
     //     if(pass1!=pass2)
     //         document.getElementById("ConfP").setCustomValidity("Passwords Don't Match");
     //     else
-    //         document.getElementById("PassW").setCustomValidity('');  
+    //         document.getElementById("PassW").setCustomValidity('');
     //     //empty string means no validation error
     //   }
     // </script>
@@ -30,57 +30,57 @@ session_start();
     <div id="login">
       <div id="form">
         <div class="top">
-		<h2>Create New Advisor Account</h2>
-		<?php
+        <h1>Create New Advisor Account</h1>
+        <?php
       if($_SESSION["PassCon"] == true){
         echo "<h3 style='color:red'>Passwords do not match!!</h3>";
       }
     ?>
-		//Create function to make a new advisor posts data to AdminProcessCreateNew.php
-		<form action="AdminProcessCreateNew.php" method="post" name="Create">
-		<div class="field"> // field for first name
-	      		<label for="firstN">First Name</label>
-	      		<input id="firstN" size="20" maxlength="50" type="text" name="firstN" required autofocus>
-	    	</div>
+        //Create function to make a new advisor posts data to AdminProcessCreateNew.php
+        <form action="AdminProcessCreateNew.php" method="post" name="Create">
+        <div class="field"> // field for first name
+                <label for="firstN">First Name</label>
+                <input id="firstN" size="20" maxlength="50" type="text" name="firstN" required autofocus>
+            </div>
 
-	    	<div class="field">//field for last name
-	     		<label for="lastN">Last Name</label>
-	      		<input id="lastN" size="20" maxlength="50" type="text" name="lastN" required>
-	   	</div>	
+            <div class="field">//field for last name
+                <label for="lastN">Last Name</label>
+                <input id="lastN" size="20" maxlength="50" type="text" name="lastN" required>
+        </div>
 
-		<div class="field">//field for username
-	     		<label for="UserN">Username</label>
-	      		<input id="UserN" size="20" maxlength="50" type="text" name="UserN" required>
-	   	</div>	 
+        <div class="field">//field for username
+                <label for="UserN">Username</label>
+                <input id="UserN" size="20" maxlength="50" type="text" name="UserN" required>
+        </div>
 
-		<div class="field">//field for password
-	     		<label for="PassW">Password</label>
-	      		<input id="PassW" size="20" maxlength="50" type="password" name="PassW" required>
-	   	</div>	
+        <div class="field">//field for password
+                <label for="PassW">Password</label>
+                <input id="PassW" size="20" maxlength="50" type="password" name="PassW" required>
+        </div>
 
-		<div class="field">//field for confirm password
-	     		<label for="ConfP">Confirm Password</label>
-	      		<input id="ConfP" size="20" maxlength="50" type="password" name="ConfP" required>
-	   	</div>	
+        <div class="field">//field for confirm password
+                <label for="ConfP">Confirm Password</label>
+                <input id="ConfP" size="20" maxlength="50" type="password" name="ConfP" required>
+        </div>
 
-		<div class="field">//field for location
-	     		<label for="Loc">Location</label>
-	      		<input id="Loc" size="20" maxlength="50" type="text" name="Loc" required>
-	   	</div>	
-		<br>
+        <div class="field">//field for location
+                <label for="Loc">Location</label>
+                <input id="Loc" size="20" maxlength="50" type="text" name="Loc" required>
+        </div>
+        <br>
 
-		<!-- submit button takes data to AdminProcessCreateNew.php -->
-		<div class="nextButton">
-			<input type="submit" name="next" class="button large go" value="Submit">
-	    </div>
-		</form>
-		<!-- Cancel button takes user to home page -->
-		<form method="link" action="AdminUI.php">
-			<input type="submit" name="home" class="button large" value="Cancel">
-		</form>
+        <!-- submit button takes data to AdminProcessCreateNew.php -->
+        <div class="nextButton">
+            <input type="submit" name="next" class="button large go" value="Submit">
+        </div>
+        </form>
+        <!-- Cancel button takes user to home page -->
+        <form method="link" action="AdminUI.php">
+            <input type="submit" name="home" class="button large" value="Cancel">
+        </form>
 
-	</div>
-	</div>
-	</div>
+    </div>
+    </div>
+    </div>
   </body>
 </html>

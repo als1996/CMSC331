@@ -15,22 +15,22 @@ $major = $_POST["major"];
 //if statement to create more space in mySQL table for Students
 
 if($major == 'Computer Science')
-	{$major = "CMSC";}
+    {$major = "CMSC";}
 elseif($major == 'Computer Engineering')
-	{$major = "CMPE";}
+    {$major = "CMPE";}
 elseif($major == 'Mechanical Engineering')
-	{$major = "MENG";}
+    {$major = "MENG";}
 elseif($major == 'Chemical Engineering')
-	{$major = "CENG";}
+    {$major = "CENG";}
 elseif($major == 'Engineering Undecided')
-	{$major = "ENGR";} 
+    {$major = "ENGR";}
 
 $debug = false;
 include('../CommonMethods.php');
 $COMMON = new Common($debug);
 if($_SESSION["studExist"] == true){
-	$sql = "update `Proj2Students` set `FirstName` = '$firstn', `LastName` = '$lastn', `Email` = '$email', `Major` = '$major' where `StudentID` = '$studid'";
-	$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]); // posts to Students table in mySQL
+    $sql = "update `Proj2Students` set `FirstName` = '$firstn', `LastName` = '$lastn', `Email` = '$email', `Major` = '$major' where `StudentID` = '$studid'";
+    $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]); // posts to Students table in mySQL
 }
 
 header('Location: 02StudHome.php'); // returns to home
