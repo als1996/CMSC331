@@ -28,7 +28,7 @@ session_start();
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-	      <input id="Date" type="date" name="Date" placeholder="mm/dd/yyyy" min="2015-08-01" max="2015-10-30" required autofocus> (mm/dd/yyyy)
+	      <input id="Date" type="date" name="Date" placeholder="mm/dd/yyyy" min="2015-08-01" max="2015-12-30" required autofocus> (mm/dd/yyyy)
 	    </div>
 
       <div class="field"> <!-- checkboxes for time -->
@@ -38,7 +38,7 @@ session_start();
         <input type="checkbox" name="time[]" value="09:00:00"> 9:00AM - 9:30AM <br>
         <input type="checkbox" name="time[]" value="09:30:00"> 9:30AM - 10:00AM <br>
         <input type="checkbox" name="time[]" value="10:00:00"> 10:00AM - 10:30AM <br>
-        <input type="checkbox" name="time[]" value="10:30:00"> 10:30AM - 11:00AM <br> 
+        <input type="checkbox" name="time[]" value="10:30:00"> 10:30AM - 11:00AM <br>
         <input type="checkbox" name="time[]" value="11:00:00"> 11:00AM - 11:30AM <br>
         <input type="checkbox" name="time[]" value="11:30:00"> 11:30AM - 12:00PM <br>
         <input type="checkbox" name="time[]" value="12:00:00"> 12:00PM - 12:30PM <br>
@@ -49,7 +49,7 @@ session_start();
         <input type="checkbox" name="time[]" value="14:30:00"> 2:30PM - 3:00PM <br>
         <input type="checkbox" name="time[]" value="15:00:00"> 3:00PM - 3:30PM <br>
         <input type="checkbox" name="time[]" value="15:30:00"> 3:30PM - 4:00PM <br>
-       
+
       </div>
 
       <div class="field"> <!-- checkboxes for major acceptability -->
@@ -76,7 +76,7 @@ session_start();
         </div>
 
 	<div class="field"> <!-- sets student limit -->
-        	<h3>Student limit: 
+        	<h3>Student limit:
         	<input type="number" id="stepper1" name="stepper1" min="1" max="10" value="10" /></h3>
         </div>
 
@@ -93,5 +93,5 @@ session_start();
 
 
   </body>
-  
+
 </html>
