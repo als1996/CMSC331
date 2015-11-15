@@ -35,7 +35,7 @@ function stage1($_GET)
 	alert("Value: " + stepVal);
     }
     </script>
-	<link rel='stylesheet' type='text/css' href='../../css/standard.css'/>
+	<link rel='stylesheet' type='text/css' href='../css/standard.css'/>
   </head>
   <body>
     <div id="login">
@@ -49,7 +49,7 @@ function stage1($_GET)
 			<input type="radio" name="priority" value="1">1 (High)<br>
 			<input type="radio" name="priority" value="2">2<br>
 			<input type="radio" name="priority" value="3">3<br>
-	
+
 	<input type="hidden" name="url" value='<?php echo($_GET["url"]); ?>'>
 
 	<input type="submit" name="next" class="button large go" value="Submit">
@@ -65,7 +65,7 @@ function stage1($_GET)
      </div>
      </div>
   </body>
-  
+
 </html>
 
 <?php
@@ -94,7 +94,7 @@ function stage2($_POST)
 	alert("Value: " + stepVal);
     }
     </script>
-	<link rel='stylesheet' type='text/css' href='../../css/standard.css'/>
+	<link rel='stylesheet' type='text/css' href='../css/standard.css'/>
   </head>
   <body>
     <div id="login">
@@ -105,7 +105,7 @@ function stage2($_POST)
 	</div>
      </div>
   </body>
-  
+
 </html>
 
 
