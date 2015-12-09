@@ -74,7 +74,7 @@ input[type="text"],input[type="email"], textarea {
 }
 
 select{
-    font-size: 18px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: #444;
     position: relative;
@@ -86,7 +86,7 @@ select{
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     height: 25px;
     overflow: visible;
@@ -114,11 +114,11 @@ a.button.large {
 }
 
 .button.large {
-    font-size: 32px;
-    height: 64px;
+    font-size: 28px;
+    height: 48px;
     padding: 0 16px;
     position: center;
-    margin-left: 105px;
+    margin-left: auto;
 }
 
 .button.go {
@@ -138,7 +138,7 @@ a.button.large {
 .field label{
     display: block;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .actions{
@@ -149,7 +149,7 @@ a.button.large {
 .bottom{
     border-top: 0px solid #ddd;
     padding-top: 12px;
-    font-size: 11px;
+    font-size: 12px;
     color: #666;
 }
 
@@ -184,8 +184,8 @@ p{
 }
 
 .button.selection {
-    background-color: #FFFFFF;
-    color: #003399;
+    background-color: #768089;
+    color: #fff;
 }
 
 .button.selection:hover {
