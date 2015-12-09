@@ -119,6 +119,9 @@ $COMMON = new Common($debug);
     </div>
     </div>
     </form>
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 
 </html>

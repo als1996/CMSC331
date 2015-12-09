@@ -35,5 +35,8 @@ session_start();
         <input type="submit" name="home" class="button large" value="Cancel">
         </form>
         </div>
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 </html>

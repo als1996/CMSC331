@@ -34,6 +34,9 @@ session_start();
     </div>
     </div>
 
+<?php
+            include 'StudAdminFooter.php';
+?>
 
   </body>
 

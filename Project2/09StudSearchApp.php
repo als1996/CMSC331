@@ -72,5 +72,8 @@ $COMMON = new Common($debug);
         </div>
         </form>
 
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 </html>

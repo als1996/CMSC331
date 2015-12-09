@@ -98,6 +98,9 @@ session_start();
     </form>
     <?php include('./workOrder/workButton.php'); ?>
 
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 
 </html>

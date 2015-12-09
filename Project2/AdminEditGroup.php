@@ -96,6 +96,9 @@ $_SESSION["Delete"] = false;
   </div>
     <?php include('./workOrder/workButton.php'); ?>
   </div>
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 
 </html>

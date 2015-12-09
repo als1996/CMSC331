@@ -89,5 +89,8 @@ $_SESSION["appTime"] = $_POST["appTime"]; // radio button selection from previou
         </div>
         </form>
         </div>
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 </html>

@@ -82,5 +82,8 @@ session_start();
     </div>
     </div>
     </div>
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 </html>

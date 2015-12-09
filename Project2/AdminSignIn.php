@@ -41,6 +41,9 @@ session_start();
         </div>
     </div>
     </form>
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 
 </html>
