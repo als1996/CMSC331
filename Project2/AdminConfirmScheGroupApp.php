@@ -23,6 +23,7 @@ $COMMON = new Common($debug);
             $repeatDays = $_POST["repeat"];
             $repeatWeek = $_POST["stepper"];
             $studentLimit = $_POST["stepper1"];
+            $room = $_POST["Location"];
 
           //one week with given start date (Ex. Thur - Wed) ['Thursday']=>[########]
           $d0 = $date;
@@ -75,19 +76,30 @@ $COMMON = new Common($debug);
           if(!empty($majors)){
             $majorPrint = "";
             foreach($majors as $m){
-          if($m == 'CMPE')
+	      /* if($m == 'CMPE')
               {$m = "Computer Engineering";}
           elseif($m == 'CMSC')
               {$m = "Computer Science";}
           elseif($m == 'MENG')
               {$m = "Mechanical Engineering";}
           elseif($m == 'CENG')
-              {$m = "Chemical Engineering";}
+	  {$m = "Chemical Engineering";}*/
               $majorDB .= $m . " ";
               $majorPrint .= $m . ", ";
             }
             $majorPrint = substr($majorPrint, 0, -2);
           }
+
+          if(strlen($room) == 0){
+	    $User = $_SESSION["UserN"];
+	    $Pass = $_SESSION["PassW"];
+	    $sql = "SELECT * FROM `Proj2Advisors` WHERE `Username` LIKE '$User'";
+	    $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+	    $row = mysql_fetch_row($rs);
+	    $room = $row[5];
+	  }
+
+
 
           //get advisor id
           $User = $_SESSION["UserN"];
@@ -110,7 +122,7 @@ $COMMON = new Common($debug);
               echo "<br><span style='color:red'>!!</span>";
             }
             else{
-              $sql = "insert into Proj2Appointments (`Time`, `AdvisorID`, `Major`, `Max`) values ('$dt', '0', '$majorDB','$studentLimit')";
+              $sql = "insert into Proj2Appointments (`Time`, `AdvisorID`, `Major`, `Max`, `Room`) values ('$dt', '0', '$majorDB','$studentLimit', '$room')";
               $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
             }
             echo "<br><br>";
