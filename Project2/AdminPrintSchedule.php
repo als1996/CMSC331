@@ -46,5 +46,8 @@ session_start();
     </div>
     <?php include('./workOrder/workButton.php'); ?>
 
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 </html>

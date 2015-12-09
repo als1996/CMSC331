@@ -55,6 +55,9 @@
     </div>
     </div>
     </form>
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 
 </html>

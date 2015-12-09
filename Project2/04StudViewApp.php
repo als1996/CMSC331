@@ -35,7 +35,7 @@ $studID = $_SESSION["studID"];
                 $row = mysql_fetch_row($rs); // get legit data
                 $advisorID = $row[2];
                 $datephp = strtotime($row[1]);
-
+		$room = $row[7]; 
                 if($advisorID != 0){
                     $sql2 = "select * from Proj2Advisors where `id` = '$advisorID'";
                     $rs2 = $COMMON->executeQuery($sql2, $_SERVER["SCRIPT_NAME"]);
@@ -44,11 +44,14 @@ $studID = $_SESSION["studID"];
                     $location = $row2[5];
                 }
                 else{$advisorName = "Group";}
-
+		
                 echo "<label for='info'>";
                 echo "Advisor: ", $advisorName, "<br>";
                 echo "Appointment: ", date('l, F d, Y g:i A', $datephp), "<br>";
-                echo "Location: ", $location, "</label>";
+		if($advisorID != 0){
+                echo "Advisor's Room: ", $location, "<br>";
+		}
+                echo "Appointment Location: ", $room, "</label>"; 
             }
             else // something is up, and there DB table needs to be fixed
             {
@@ -68,5 +71,8 @@ $studID = $_SESSION["studID"];
         </div>
         </div>
         </form>
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 </html>

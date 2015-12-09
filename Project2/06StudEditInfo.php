@@ -112,6 +112,9 @@ while($row = mysql_fetch_row($rs)){
             </div>
             </div>
         </form>
+<?php
+            include 'StudAdminFooter.php';
+?>
   </body>
 
 </html>
