@@ -24,12 +24,18 @@ $_SESSION["appTime"] = $_POST["appTime"]; // radio button selection from previou
             $debug = false;
             include('../CommonMethods.php');
             $COMMON = new Common($debug);
+            
 
-            $firstn = $_SESSION["firstN"];
-            $lastn = $_SESSION["lastN"];
-            $studid = $_SESSION["studID"];
-            $major = $_SESSION["major"];
-            $email = $_SESSION["email"];
+            $userID = $_SESSION["userID"];
+            $sql = "select * from Proj2Students where `id` = '$userID'";
+            $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+            $row = mysql_fetch_row($rs);
+
+            $firstn = $row[1];
+            $lastn = $row[2];
+            $studid = $row[3];
+            $major = $row[5];
+            $email = $row[4];
 
             if($_SESSION["resch"] == true){ //if the student is rescheduling an existing appointment
                 //reads in from mySQL Appointments table

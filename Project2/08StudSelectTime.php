@@ -7,23 +7,15 @@ if(isset($_POST["advisor"])){
 }
 
 $localAdvisor = $_SESSION["advisor"];
-$localMaj = $_SESSION["major"];
-
-//this makes sure that only abbreviated verson of major posts to mySQL tables
-
-if($localMaj == 'Computer Engineering')
-    {$localMaj = "CMPE";}
-elseif($localMaj == 'Chemical Engineering')
-    {$localMaj = "CENG";}
-elseif($localMaj == 'Mechanical Engineering')
-    {$localMaj = "MENG";}
-elseif($localMaj == 'Engineering Undecided')
-    {$localMaj = "ENGR";}
-elseif($localMaj == 'Computer Science')
-    {$localMaj = "CMSC";}
 
 include('../CommonMethods.php');
 $COMMON = new Common($debug);
+
+$userID = $_SESSION["userID"];
+$sql = "select * from Proj2Students where `id` = '$userID'";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+$row = mysql_fetch_row($rs);
+$localMaj = $row[5];
 
 $sql = "select * from Proj2Advisors where `id` = '$localAdvisor'";
 $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);

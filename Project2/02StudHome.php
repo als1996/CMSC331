@@ -1,5 +1,20 @@
 <?php
 session_start();
+    $debug = false;
+    include('../CommonMethods.php');
+    $COMMON = new Common($debug);
+    $tableid = $_SESSION["userID"];
+    $sql = "select * from Proj2Students where `id` = '$tableid'";
+    $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+    $row = mysql_fetch_row($rs);    
+    $fname = $row[1];
+    $studExist = true;
+    if($row[6] == 'C'){
+        $adminCancel = true;
+    }
+    if($row[6] == 'N'){
+        $noApp = true;
+    }
 ?>
 
 <html lang="en">
@@ -17,8 +32,8 @@ session_start();
         <div class="top">
         <h1>Hello
         <?php
-            echo $_SESSION["firstN"];
-        ?>
+            echo $fname;
+            ?>
         </h1>
         <div class="selections">
 
@@ -26,32 +41,9 @@ session_start();
         <!-- this action will go to StudProcessHome.php and decide what form to go to next depending on users selection -->
         <form action="StudProcessHome.php" method="post" name="Home">
         <?php
-            $debug = false;
-            include('../CommonMethods.php');
-            $COMMON = new Common($debug);
-
-            $_SESSION["studExist"] = false;
-            $adminCancel = false;
-            $noApp = false;
-            $studid = $_SESSION["studID"];
-
-            $sql = "select * from Proj2Students where `StudentID` = '$studid'";
-            $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-            $row = mysql_fetch_row($rs);
-
-            if (!empty($row)){
-                $_SESSION["studExist"] = true;
-                if($row[6] == 'C'){
-                    $adminCancel = true;
-                }
-                if($row[6] == 'N'){
-                    $noApp = true;
-                }
-            }
-
             //Checks to make sure current session student exists
             //If appointment was canceled by the advisor then the student will be notified
-            if ($_SESSION["studExist"] == false || $adminCancel == true || $noApp == true){
+            if ($studExist == false || $adminCancel == true || $noApp == true){
                 if($adminCancel == true){
                     echo "<p style='color:red'>The advisor has cancelled your appointment! Please schedule a new appointment.</p>";
                 }

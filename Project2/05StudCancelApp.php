@@ -1,8 +1,20 @@
 <?php
 session_start();
+
 $debug = false;
 include('../CommonMethods.php');
 $COMMON = new Common($debug);
+$tableid = $_SESSION["userID"];
+$sql = "select * from Proj2Students where `id` = '$tableid'";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+$row = mysql_fetch_row($rs);
+
+$firstn = $row[1];
+$lastn = $row[2];
+$studid = $row[3];
+$major = $row[4];
+$email = $row[5];
+
 ?>
 
 <html lang="en">
@@ -19,11 +31,6 @@ $COMMON = new Common($debug);
         <h1>Cancel Appointment</h1>
         <div class="field">
         <?php
-            $firstn = $_SESSION["firstN"];
-            $lastn = $_SESSION["lastN"];
-            $studid = $_SESSION["studID"];
-            $major = $_SESSION["major"];
-            $email = $_SESSION["email"];
 
             $sql = "select * from Proj2Appointments where `EnrolledID` like '%$studid%'";
             $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);

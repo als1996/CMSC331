@@ -4,36 +4,23 @@ $debug = false;
 include('../CommonMethods.php');
 $COMMON = new Common($debug);
 
+$userID = $_SESSION["userID"];
+$sql = "select * from Proj2Students where `id` = '$userID'";
+$rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+$row = mysql_fetch_row($rs);
+
 if($_POST["finish"] == 'Cancel'){
     $_SESSION["status"] = "none";
 }
 else{
-    $firstn = $_SESSION["firstN"];
-    $lastn = $_SESSION["lastN"];
-    $studid = $_SESSION["studID"];
-    $major = $_SESSION["major"];
-    $email = $_SESSION["email"];
+    $firstn = $row[1];
+    $lastn = $row[2];
+    $studid = $row[3];
+    $major = $row[5];
+    $email = $row[4];
     $advisor = $_SESSION["advisor"];
-
-//Creates more room when writing into mySQL table for Students
-
-if($major == 'Computer Science')
-    {$major = "CMSC";}
-elseif($major == 'Computer Engineering')
-    {$major = "CMPE";}
-elseif($major == 'Mechanical Engineering')
-    {$major = "MENG";}
-elseif($major == 'Chemical Engineering')
-    {$major = "CENG";}
-elseif($major == 'Engineering Undecided')
-    {$major = "ENGR";}
-
+    
     $apptime = $_SESSION["appTime"];
-    if($_SESSION["studExist"] == false){
-    //inserts student into mySQL students table
-        $sql = "insert into Proj2Students (`FirstName`,`LastName`,`StudentID`,`Email`,`Major`) values ('$firstn','$lastn','$studid','$email','$major')";
-        $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-    }
 
 
     // ************************ Lupoli 9-1-2015

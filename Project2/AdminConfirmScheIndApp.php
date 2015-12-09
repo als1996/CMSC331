@@ -23,7 +23,6 @@ $COMMON = new Common($debug);
             $majors = $_POST["major"];
             $repeatDays = $_POST["repeat"];
             $repeatWeek = $_POST["stepper"];
-            $room = $_POST["Location"];
 
             //one week with given start date (Ex. Thur - Wed) ['Thursday']=>[########]
             $d0 = $date;
@@ -82,15 +81,6 @@ $COMMON = new Common($debug);
                 $majorPrint = substr($majorPrint, 0, -2);
             }
 
-            if(strlen($room) == 0){
-	      $User = $_SESSION["UserN"];
-	      $Pass = $_SESSION["PassW"];
-	      $sql = "SELECT * FROM `Proj2Advisors` WHERE `Username` LIKE '$User'";
-	      $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
-	      $row = mysql_fetch_row($rs);
-	      $room = $row[5];
-	    }
-
             //get advisor id
             $User = $_SESSION["UserN"];
             $Pass = $_SESSION["PassW"];
@@ -111,8 +101,8 @@ $COMMON = new Common($debug);
                     echo "<br><span style='color:red'>!!</span>";
                 }
                 else{
-		  $sql = "insert into Proj2Appointments (`Time`, `AdvisorID`, `Major`, `Max`,`Room`) values ('$dt', '$id', '$majorDB',1,'$room')";
-		  $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
+                    $sql = "insert into Proj2Appointments (`Time`, `AdvisorID`, `Major`, `Max`) values ('$dt', '$id', '$majorDB',1)";
+                    $rs = $COMMON->executeQuery($sql, $_SERVER["SCRIPT_NAME"]);
                 }
                 echo "<br><br>";
             }

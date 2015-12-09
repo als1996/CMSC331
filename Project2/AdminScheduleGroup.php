@@ -69,14 +69,6 @@ session_start();
             <input type="checkbox" name="repeat[]" value="Friday">Friday
         </div>
 
-         <div class="field">
-            <label for="Location">Location of meeting</label> <!-- check boxes for repeat weekdays -->
-            <input type="radio" name="location[]" value="My Office">My Office
-            <input type="radio" name="location[]" value="Other">Other:<input type="text" name="Location">
-    </div>
-
-
-
         <div class="field"> <!--sets number of repeat weeks-->
             <h3>Repeat for
             <input type="number" id="stepper" name="stepper" min="0" max="4" value="0" />

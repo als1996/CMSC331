@@ -32,11 +32,11 @@ session_start();
         <input type="submit" name="home" class="button large" value="Cancel">
         </form>
     </div>
+    </div>
+
 <?php
             include 'StudAdminFooter.php';
 ?>
-    </div>
-
 
   </body>
 

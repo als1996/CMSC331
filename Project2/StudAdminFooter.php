@@ -1,8 +1,6 @@
 <?php
 echo
-"<div>
-    <b>
-        <font size=\"5\" color=\"red\">This is in TESTING mode only!! You are creating SIMULATED Appointments!!!</font>
-    </b>
-</div>"
+
+"<div class=\"copyright last\">© 2010 University of Maryland, Baltimore County.  • 1000 Hilltop Circle, Baltimore, MD 21250 • 410-455-1000</div>"
+
 ?>

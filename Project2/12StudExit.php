@@ -18,19 +18,19 @@ session_start();
             //outputs a message to the user apprpriate to the action that took place
             $_SESSION["resch"] = false;
             if($_SESSION["status"] == "complete"){
-                echo "You have completed your sign-up for an advising appointment.";
+                echo "<h2>You have completed your sign-up for an advising appointment.</h2>";
             }
             elseif($_SESSION["status"] == "none"){
-                echo "You did not sign up for an advising appointment.";
+                echo "<h2>You did not sign up for an advising appointment.</h2>";
             }
             if($_SESSION["status"] == "cancel"){
-                echo "You have cancelled your advising appointment.";
+                echo "<h2>You have cancelled your advising appointment.</h2>";
             }
             if($_SESSION["status"] == "resch"){
-                echo "You have changed your advising appointment.";
+                echo "<h2>You have changed your advising appointment.</h2>";
             }
             if($_SESSION["status"] == "keep"){
-                echo "No changes have been made to your advising appointment.";
+                echo "<h2>No changes have been made to your advising appointment.</h2>";
             }
         ?>
         </div>
